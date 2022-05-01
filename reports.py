@@ -9,16 +9,17 @@ import re
 
 
 def generate_report():
+    descpath = "supplier-data/descriptions"
     today = datetime.date.today()
     styles = getSampleStyleSheet()
     report = SimpleDocTemplate("report.pdf")
     report_list = [ Paragraph(f"Processed Update on {today}", styles["h1"]) ]
     blank_line = Paragraph("<br />")
     report_list.append(blank_line)
-    desclist = os.listdir('Descriptions')
+    desclist = os.listdir(descpath)
     for desc in desclist:
         trimname = re.search("\w*",desc).group(0)
-        with open("Descriptions/" + trimname + ".txt") as f:
+        with open(descpath + "/" + trimname + ".txt") as f:
             mylist = f.readlines()
             name = mylist[0]
             weight = int(re.search('[0-9]+' ,mylist[1] ).group(0))
@@ -27,4 +28,5 @@ def generate_report():
     report.build(report_list)
 
 if __name__ == "__main__":
+    print()
     generate_report()

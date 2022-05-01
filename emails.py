@@ -13,7 +13,7 @@ class emails:
         message['Subject'] = "Upload Completed - Online Fruit Store"
 
         message.set_content("All fruits are uploaded to our website successfully. A detailed list is attached to this email.")
-        attachment_path = "processed.pdf"
+        attachment_path = "report.pdf"
         attachment_filename = os.path.basename(attachment_path)
         mime_type, _ = mimetypes.guess_type(attachment_path)
 
