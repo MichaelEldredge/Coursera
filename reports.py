@@ -8,12 +8,10 @@ from reportlab.lib.styles import getSampleStyleSheet
 import re
 
 
-def generate_report():
-    descpath = "supplier-data/descriptions"
-    today = datetime.date.today()
+def generate_report(descpath, title, paragraph):
     styles = getSampleStyleSheet()
-    report = SimpleDocTemplate("report.pdf")
-    report_list = [ Paragraph(f"Processed Update on {today}", styles["h1"]) ]
+    report = SimpleDocTemplate(title)
+    report_list = [ Paragraph(paragraph, styles["h1"]) ]
     blank_line = Paragraph("<br />")
     report_list.append(blank_line)
     desclist = os.listdir(descpath)
@@ -29,4 +27,8 @@ def generate_report():
 
 if __name__ == "__main__":
     print()
-    generate_report()
+    descpath = "supplier-data/descriptions"
+    title = "processed.pdf"
+    today = datetime.date.today()
+    paragraph = f"Processed Update on {today}"
+    generate_report(descpath, title, paragraph)
