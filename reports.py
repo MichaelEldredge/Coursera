@@ -12,7 +12,7 @@ def generate_report(descpath, title, paragraph):
     styles = getSampleStyleSheet()
     report = SimpleDocTemplate(title)
     report_list = [ Paragraph(paragraph, styles["h1"]) ]
-    blank_line = Paragraph("<br />")
+    blank_line = Spacer(1,20)
     report_list.append(blank_line)
     desclist = os.listdir(descpath)
     for desc in desclist:
@@ -21,7 +21,7 @@ def generate_report(descpath, title, paragraph):
             mylist = f.readlines()
             name = mylist[0]
             weight = int(re.search('[0-9]+' ,mylist[1] ).group(0))
-            report_list.append(Paragraph(f"name: {name}<br />weight: {weight} lbs"))
+            report_list.append(Paragraph(f"name: {name}<br />weichmreght: {weight} lbs\n"))
             report_list.append(blank_line)
     report.build(report_list)
 
