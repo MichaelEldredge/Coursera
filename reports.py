@@ -26,7 +26,6 @@ def generate_report(descpath, title, paragraph):
     report.build(report_list)
 
 if __name__ == "__main__":
-    print()
     descpath = "supplier-data/descriptions"
     title = "processed.pdf"
     today = datetime.date.today()

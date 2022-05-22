@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Descriptions",
-    "\\images"
+    "\\supplier-data",
+    "\\supplier-data\\descriptions",
+    "\\supplier-data\\images"
   ],
-  "SelectedNode": "\\changeImage.py",
+  "SelectedNode": "\\run.py",
   "PreviewInSolutionExplorer": false
 }

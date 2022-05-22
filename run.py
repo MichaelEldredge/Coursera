@@ -5,7 +5,7 @@ import requests
 import json
 import re
 
-url = "http://localhost/upload/"
+url = "http://localhost/fruits/"
 lin_inst_ext = "35.232.216.221"
 post_address = "http://" + lin_inst_ext + "/fruits"
 desclist = os.listdir("supplier-data/descriptions")
