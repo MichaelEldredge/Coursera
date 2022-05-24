@@ -8,7 +8,7 @@ import smtplib
 def generate_email(subject_line,body, attachment_path=False):
     message = EmailMessage()
     message['From'] = "automation@example.com"
-    message['To'] = "student-03-95c0c5d6b715@example.com"
+    message['To'] = "student-03-4c6bfebf11ce@example.com"
     #message['Subject'] = "Upload Completed - Online Fruit Store"
     message['Subject'] = subject_line
 

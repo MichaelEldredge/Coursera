@@ -21,5 +21,3 @@ for desc in desclist:
         m = {'name':name, 'weight':weight, 'description':description, 'image_name':picname}
         response = requests.post(url, json=m)
         response.raise_for_status()
-        print(response.request.url)
-        print(response.status_code)
